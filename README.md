@@ -13,6 +13,8 @@ An interactive Streamlit dashboard comparing publicly traded companies using rec
   5. Daily trading volume (log scale)
   6. Drawdown from prior peak
 - Dynamically generated performance and volatility observations
+- Brief interpretation guide explaining what each visualization reveals
+- Course credit footer: “Developed for CPS*5745 by Angel Bello”
 - Summary comparison table (not counted as one of the six visualizations)
 
 ## Run locally

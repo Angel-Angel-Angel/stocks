@@ -138,6 +138,19 @@ if most_volatile:
 st.write(" ".join(insights))
 st.caption("These comparisons use adjusted closing prices, which account for splits and distributions. Past performance does not predict future results.")
 
+with st.expander("Brief explanation of differences revealed by the visualizations", expanded=True):
+    st.markdown(
+        """
+        - **Relative performance:** The indexed-price chart compares percentage growth from a common starting value of 100. A line ending higher indicates stronger price performance over the selected period.
+        - **Share-price levels:** The adjusted-closing-price chart compares USD per share, but a higher share price does not by itself mean a company performed better because companies have different share counts and prices.
+        - **Daily movements and volatility:** Daily returns show individual session gains and losses. The rolling-volatility chart summarizes how variable those returns have been; higher volatility means larger fluctuations, not necessarily higher returns.
+        - **Trading activity:** The volume chart shows how many shares traded each day. The logarithmic axis helps compare companies whose trading volumes differ substantially.
+        - **Risk of declines:** The drawdown chart shows the percentage below each stock's previous peak. Deeper negative values indicate larger historical declines from a prior high.
+
+        The best- and worst-performing companies and the latest volatility comparison above update automatically when the selected companies or date range change. The results depend on the chosen period and should not be treated as predictions.
+        """
+    )
+
 st.divider()
 st.subheader("1. Indexed price performance")
 st.markdown("Each company starts at **100** on its first available date, making percentage performance comparable despite different share prices.")
@@ -200,3 +213,4 @@ table.index.name = "Company"
 st.dataframe(table, use_container_width=True)
 
 st.caption("Educational project only. Market data is supplied by Yahoo Finance and may be delayed, revised, or unavailable at times. This dashboard is not financial advice.")
+st.markdown("**Developed for CPS*5745 by Angel Bello**")
